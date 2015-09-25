@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模仿LOFTER明信片的动效</title>
+	<style type="text/css">
+	  .pic{
+	  	 margin:30px auto;
+	  	 position: relative;
+         width:510px;
+         height:380px;       
+	  }
+      .bor{
+      	position: absolute;
+      	display: block;
+        width:500px;
+        height:375px;
+        border:1px solid #E0E0E0;
+        /*background-color: transparent;*/
+        /*background-color: #e0e0e0;*/
+        background-color: white;
+        /*0.3秒的匀速速度*/
+        transition:.3s;
+      }
+      .bor:first-child{
+      	left:8px;
+      	top:8px;
+      	z-index: -9;
+      }
+      .bor:nth-child(2){
+      	left:6px;
+      	top:6px;
+      	z-index: -8;
+      }
+      .bor:nth-child(3){
+      	left:4px;
+      	top:4px;
+      	z-index: -7;
+      }
+      .bor:nth-child(4){
+      	left:2px;
+      	top:2px;
+      	z-index: -5;
+      }
+      .pic img{
+      	z-index: -1;
+      }
+      .pic a:hover{
+           cursor: pointer;
+      }
+       
+      .pic a:hover .bor:first-child{
+			transform:rotate(3deg);
+			-ms-transform:rotate(3deg); /* Internet Explorer */
+			-moz-transform:rotate(3deg); /* Firefox */
+			-webkit-transform:rotate(3deg); /* Safari 和 Chrome */
+			-o-transform:rotate(3deg); /* Opera */
+			} 
+	    .pic a:hover .bor:nth-child(2){
+			transform:rotate(-2deg);
+			-ms-transform:rotate(-2deg); 
+			-moz-transform:rotate(-2deg);
+			-webkit-transform:rotate(-2deg);
+			-o-transform:rotate(-2deg); 
+			} 
+		 .pic a:hover .bor:nth-child(3){
+			transform:rotate(-3deg);
+			-ms-transform:rotate(-3deg); 
+			-moz-transform:rotate(-3deg); 
+			-webkit-transform:rotate(-3deg); 
+			-o-transform:rotate(-3deg); 
+			} 
+		 .pic a:hover .bor:nth-child(4){
+			transform:rotate(2deg);
+			-ms-transform:rotate(2deg); 
+			-moz-transform:rotate(2deg); 
+			-webkit-transform:rotate(2deg); 
+			-o-transform:rotate(2deg); 
+			} 	
+           .pic a:hover img{
+           	transition:.3s;
+			transform:rotate(1deg);
+			-ms-transform:rotate(1deg); 
+			-moz-transform:rotate(1deg); 
+			-webkit-transform:rotate(1deg); 
+			-o-transform:rotate(1deg); 
+			}    
+	</style>
+</head>
+<body>
+    <p>这是一个模仿鼠标悬停在LOFTER明信片上的效果</p>
+	<div class="pic">
+	  <a href="http://www.cnblogs.com/rosestudy/">
+		<span class="bor"></span>
+		<span class="bor"></span>
+		<span class="bor"></span>
+		<span class="bor"></span>
+		<!-- pic width:500px height:375px -->
+		<img src="../pic/like.jpg"/>
+	  </a>
+	</div>
+</body>
+</html>
