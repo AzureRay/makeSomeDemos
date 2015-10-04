@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>CSS3实现网页平滑过渡效果</title>
+	<meta charset="UTF-8">	
+	<!-- 强制IE浏览器使用最新的渲染模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IeE-edge,Chrome=1">
+	<!-- 响应式 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin+Slab:400,700">
+	<link rel="stylesheet" type="text/css" href="../reset/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../css/smoothTransition.css">	 
+</head>
+<body>
+    <div class="container">
+    	<div class="st-container">
+    	<!-- nav begin -->
+    		<input type="radio" name="radio-set" checked="checked" id="st-control-1">
+    		<a href="#st-panel-1">first</a>
+    		<input type="radio" name="radio-set" id="st-control-2">
+    		<a href="#st-panel-2">second</a>
+    		<input type="radio" name="radio-set" id="st-control-3">
+    		<a href="#st-panel-3">three</a>
+    		<input type="radio" name="radio-set" id="st-control-4">
+    		<a href="#st-panel-4">fourth</a>
+    		<input type="radio" name="radio-set" id="st-control-5">
+    		<a href="#st-panel-5">fifth</a>
+    		<!-- nav end -->
+    		<div class="st-scroll">
+    			<section class="st-panel" id="st-panel-1">
+    		      <div class="st-desc" data-icon="H"></div>
+    		      <h2>FirstTitle</h2>
+    		      <p>Starting in Firefox 41, Mozilla provides a developer tool that allows users to inspect the security settings of a website. Using GCLI (Graphic Command Line Interface) a user can inspect the Content Security Policy (CSP) of a website.</p>
+    			</section>
+    			<section class="st-panel st-color" id="st-panel-2">
+    		      <div class="st-desc" data-icon="2"></div>
+    		      <h2>SecondTitle</h2>
+    		      <p>Starting in Firefox 41, Mozilla provides a developer tool that allows users to inspect the security settings of a website. Using GCLI (Graphic Command Line Interface) a user can inspect the Content Security Policy (CSP) of a website.</p> 
+    			</section>
+    			<section class="st-panel" id="st-panel-3">
+    		      <div class="st-desc" data-icon="B"></div>
+    		      <h2>ThirdTitle</h2>
+    		      <p>Starting in Firefox 41, Mozilla provides a developer tool that allows users to inspect the security settings of a website. Using GCLI (Graphic Command Line Interface) a user can inspect the Content Security Policy (CSP) of a website.</p>
+    			</section>
+    			<section class="st-panel st-color" id="st-panel-4">
+    		      <div class="st-desc" data-icon="D"></div>
+    		      <h2>FourthTitle</h2>
+    		      <p>Starting in Firefox 41, Mozilla provides a developer tool that allows users to inspect the security settings of a website. Using GCLI (Graphic Command Line Interface) a user can inspect the Content Security Policy (CSP) of a website. </p>
+    			</section>
+    			<section class="st-panel" id="st-panel-5">
+    		      <div class="st-desc" data-icon="C"></div>
+    		      <h2>FifthTitle</h2>
+    		      <p>Starting in Firefox 41, Mozilla provides a developer tool that allows users to inspect the security settings of a website. Using GCLI (Graphic Command Line Interface) a user can inspect the Content Security Policy (CSP) of a website. </p>
+    			</section>
+    		</div>
+
+    	</div>
+    </div>
+     
+</body>
+</html>
