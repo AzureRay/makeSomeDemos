@@ -1,0 +1,27 @@
+/*模仿牛客网的css帮助文档*/
+/*内容主体背景灰色*/
+background: #eee;
+
+/*首页顶部和底部的深灰色*/
+background: #3d444c;
+
+/*显示做题题数进度的绿色*/
+  background-color: #1abc9c;
+/*提交按钮的橙色*/
+background: #ff6547;
+
+/*显示正在做的题目的绿色*/
+background: #59b59c;
+
+/*显示展开答题卡的鼠标悬停时的绿色*/
+color: #25bb9b;
+
+/*标题背景绿色*/
+background:#00bc9b;
+
+/*警告条的浅黄色背景*/
+  background: #ffeab1；
+
+/*警告条上的棕黄色字体颜色*/
+  color: #C18D00;
+
