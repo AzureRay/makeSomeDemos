@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3-3D效果</title>
+	<style type="text/css">
+	#block{
+		width: 400px;
+		height:400px;
+		background-color: blue;
+		margin:0 auto;
+		/*transition:<过渡属性名称 > <过渡时间>
+		等价于
+		transition.property:<过渡属性名称 >;
+		transition.duration:<过渡时间>;*/
+
+		/*背景色从蓝变红，经历3s*/
+		transition:background-color 3s;
+	}
+	#block:hover{
+		background-color: red;
+	}
+	.widchange{
+		width: 100px;
+		height:50px;
+		background-color: red;
+		/*第三个参数是过渡模式，默认值为ease，表示慢速开始，然后变快，缓慢结束*/
+		transition:width 3s;
+		margin-bottom: 10px;
+	}
+	.test-linear{
+		/*过渡模式是匀速开始和匀速结束*/
+		transition:width 3s linear;
+	}
+	.test-ease-in{
+		/*缓慢开始*/
+		transition:width 3s ease-in;
+	}
+	.test-ease-out{
+		/*缓慢结束*/
+		transition:width 3s ease-out;
+	}
+	.test-ease-in-out{
+		/*缓慢开始，缓慢结束*/
+		transition:width 3s ease-in-out;
+	}
+	.widchange:hover{
+		width:300px;
+	}
+	</style>
+</head>
+<body>
+	<div id="block">		
+	</div>
+	<div>
+		<div class="widchange test-ease">默认值：ease</div>
+		<div class="widchange test-linear">test-linear</div>
+		<div class="widchange test-ease-in">test-ease-in</div>
+		<div class="widchange test-ease-out">test-ease-out</div>
+		<div class="widchange test-ease-in-out">test-ease-in-out</div>
+	</div>
+</body>
+</html>

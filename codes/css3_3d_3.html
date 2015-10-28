@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3-3d-3</title>
+	<style type="text/css">
+	  #my3dspace{
+	  	/*3D窗口*/
+	      -webkit-perspective: 800;
+	    /*人眼在3D窗口的中心点*/  
+	      -webkit-perspective-origin: 20% 50%;
+
+        /*避免3D窗口影响其他元素的显示*/
+	      overflow:hidden;
+	  }
+	  #pagegroup{
+	      width:400px;
+	      height:400px;
+	      margin:0 auto;
+        /*告诉浏览器在三位空间调整元素*/
+	      -webkit-transform-style:preserve-3d;
+
+	      position: relative;
+	  }
+	  .page{
+	      width:360px;
+	      height:360px;
+	      padding:20px;
+	      background-color: black;
+
+	      color:white;
+
+	      font-weight:bold;
+	      font-size:360px;
+	      line-height:360px;
+	      text-align:center;
+
+	      position:absolute;
+	  }
+	  #page1{
+	  	/*以x轴的底部作为旋转轴*/
+	      -webkit-transform-origin:bottom;
+	    /*1s的匀速旋转*/
+	      -webkit-transition: -webkit-transform 3s linear;
+	  }
+	  #page2,#page3,#page4,#page5,#page6{
+	      -webkit-transform-origin:bottom;
+	      -webkit-transition: -webkit-transform 3s linear;
+	    /*沿着x轴向内旋转90度*/
+	      -webkit-transform: rotateX(90deg);
+	  }
+
+	  #op{
+	      text-align:center;
+	      margin: 40px auto;
+	  }
+	
+	</style>
+	<script type="text/javascript">
+		var curIndex = 1;
+
+		        function next(){
+
+		            if( curIndex == 6 )
+		                return;
+
+		            var curPage = document.getElementById("page"+curIndex);
+		            curPage.style.webkitTransform = "rotateX(-90deg)";
+
+		            curIndex ++;
+		            var nextPage = document.getElementById("page"+curIndex);
+		            nextPage.style.webkitTransform = "rotateX(0deg)";
+		        }
+
+		        function pre(){
+
+		            if( curIndex == 1 )
+		                return;
+
+		            var curPage = document.getElementById("page"+curIndex);
+		            curPage.style.webkitTransform = "rotateX(90deg)";
+
+		            curIndex --;
+		            var prevPage = document.getElementById("page"+curIndex);
+		            prevPage.style.webkitTransform = "rotateX(0deg)";
+		        }
+	</script>
+</head>
+<body>
+	<!-- 首先创建一个3D空间 -->
+	<div id="my3dspace">
+	<!-- 定义一个容器存放所有的页面 -->
+		<div id="pagegroup">
+			<div class="page" id="page1">1</div>
+			<div class="page" id="page2">2</div>
+			<div class="page" id="page3">3</div>
+			<div class="page" id="page4">4</div>
+			<div class="page" id="page5">5</div>
+			<div class="page" id="page6">6</div>
+		</div>
+	</div>
+	<!-- 翻页操作 -->
+	<div id="op">
+	  <a href="javascript:next()">next</a>&nbsp;<a href="javascript:pre()">pre</a>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D翻书效果</title>
+	<style type="text/css">
+	  #my3dspace{
+	    -webkit-perspective:800;
+        -webkit-perspective-orgin:50% 50%;
+        overflow:hidden;
+	  }
+	  #picgroup{
+	  	width:210px;
+	  	height: 210px;
+	  	margin:0 auto;
+	  	-webkit-transform-style:preserve-3d;
+	  	position: relative;
+	  }
+	  .pic{
+	  	width: 200px;
+	  	height: 200px;
+	  	position: absolute;
+	  	border:3px solid pink;
+	  }
+	  #pic1{
+	  	background-image: url(../pic/pic1.jpg);
+	  }
+	   #pic2{
+	  	background-image: url(../pic/pic2.jpg);
+	  }
+	   #pic3{
+	  	background-image: url(../pic/pic3.jpg);
+	  }
+	   #pic4{
+	  	background-image: url(../pic/pic4.jpg);
+	  }
+	  	#pic1{
+	  	-webkit-transform-origin:left;
+	  	-webkit-transition:transform 1s ease-in;
+	  }
+	  #pic2,#pic3,#pic4{
+	  	-webkit-transform-origin:left;
+	  	-webkit-transition:transform 1s ease-in;
+	
+
+	  }
+	  #op{
+	  	text-align:center;
+	  	margin:30px auto;
+	  }
+
+
+	</style>
+	<script type="text/javascript">
+	var curIndex = 1;
+	  function next(){
+      if(curIndex == 4){
+      	return;
+      }
+      var curPic=document.getElementById("pic"+curIndex);
+      curPic.style.webkitTransform = "rotateY(-180deg)";
+      curIndex++;
+      var nextPic =document.getElementById("pic"+curIndex);
+      nextPic.style.webkitTransform ="rotateY(0deg)";
+	  }
+
+  	  function pre(){
+        if(curIndex == 1){
+        	return;
+        }
+        var curPic=document.getElementById("pic"+curIndex);
+        curPic.style.webkitTransform = "rotateY(0deg)";
+        curIndex--;
+        var prePic =document.getElementById("pic"+curIndex);
+        nextPic.style.webkitTransform ="rotateY(180deg)";
+  	  }
+
+	</script>
+</head>
+<body>
+	<div id="my3dspace">
+		<div id="picgroup">	 
+		  <div class="pic" id="pic4"></div>
+		   <div class="pic" id="pic3"></div>
+		   <div class="pic" id="pic2"></div>
+		   <div class="pic" id="pic1"></div>
+
+			
+		</div>
+	</div>
+	<div id="op">
+	  <a href="javascript:next()">下一页</a>&nbsp;
+	  <a href="javascript:pre()">上一页</a>
+	</div>
+</body>
+</html>

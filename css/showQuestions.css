@@ -55,10 +55,48 @@ body{
 .oj-main{
 	background-color: white;
 	width: 960px;
-	height:500px;
+	height:auto;
 	margin-top: 50px;
 	margin:0 auto;
 }
+.subject-progress{
+	height:72px;
+	background-color: red;
+}
+.subject-title{
+	height:55px;
+	background:#fff url(../pic/q-ico.png) 20px 16px no-repeat;
+	border-bottom:1px solid #eee;
+}
+.subject-main{
+	padding:20px;
+}
+.subject-options.selected, .subject-options.selected:hover {
+  border-color: #1abc9c;
+  background: #FFF;
+}
+a:link, a:visited {
+  text-decoration: none;
+}
+a:link, a:visited {
+  text-decoration: none;
+}
+.subject-options {
+  margin-bottom: 20px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 12px 20px 13px;
+  background: #FFF;
+  display: block;
+  word-break: break-all;
+}
+a {
+  color: #333;
+}
+a, ins {
+  text-decoration: none;
+}
+
 /*page body end*/
 
 /*page footer start*/
