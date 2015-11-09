@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>利用旋转实现斜切效果,显示更多描述信息</title>
+	<style type="text/css">
+	  body,figure,img,figcaption,h2,p,div{
+	  	margin:0;
+	  	padding: 0;
+	  }
+	  figure{
+	  	position:relative;
+	  	width:50%;	  
+	  	margin:0 auto;
+	  	overflow: hidden;
+	  }
+	  figure img{
+	  	width:100%;
+	  	height:100%;
+	  	overflow: hidden;
+	  }
+	  figcaption{
+	  	position: absolute;
+	  	bottom:-50%;
+	  	left:0;
+	  	width: 120%;
+	  	height:50%;
+	  	background-color: #FFF;
+	  	background: rgba(255,255,255,0);
+	  	text-align: center;
+	  	transition:all 1s;
+	  	
+
+	  }
+	  /*make animation*/
+	  figure:hover figcaption{
+	  	transform-origin:0 0;
+	  	transform:rotate(-15deg);
+	  	background: rgba(255,255,255,0.5);
+	  }
+
+	</style>
+</head>
+<body>
+  <figure>
+    <img src="../pic/yantai.jpg">
+  	<figcaption>
+  	    <h2>I LOVE OCEAN.What about you?</h2>
+  	    <p>My school is near the sea.It's so cool.</p>
+  	</figcaption>
+  </figure>
+</body>
+</html>
