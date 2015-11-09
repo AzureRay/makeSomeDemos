@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 picture dynamic notice</title>
+	<style type="text/css">
+	body,figure,img,figcaption,h2,p{
+		margin:0;
+		padding:0;
+	}
+	figure{
+		position: relative;
+		float: left;
+		width:33.33%;
+		height:350px;
+		overflow: hidden;
+
+	}
+	figure img{
+		opacity: 0.8;
+		transition:all 0.35s;
+
+	}
+	figure figcaption p,h2,span,div{
+		transition:all 0.35s;
+	}
+	figcaption{
+		position: absolute;
+		top:0px;
+		left:0px;
+		color:#FFF;
+		font-family: "微软雅黑";
+	}
+	/*通过媒介查询实现响应式布局*/
+	@media screen and (max-width: 600px){
+		figure{
+			width:100%;
+		}
+	}
+	@media screen and (min-width: 601px) and (max-width: 1000px){
+		figure{
+			width:50%;
+		}
+	}
+	@media screen and (min-width: 1001px){
+		figure{
+			width:33.33%;
+		}
+	}
+	.one figcaption{
+		padding:15px;
+	}
+	.one p{
+		background: #FFF;
+		color: gray;
+		margin-bottom:3px;
+		text-align: center;
+		/*通过偏移隐藏图片描述*/
+		transform:translate(-120px,0px);
+	}
+    .one:hover p{
+    	transform:translate(0px,0px);
+    }
+    /*p的同级的兄弟元素的第一个*/
+    .one figcaption p:nth-of-type(1){
+        transition-delay:0.05s;
+    }
+     .one figcaption p:nth-of-type(2){
+        transition-delay:0.1s;
+    }
+     .one figcaption p:nth-of-type(3){
+        transition-delay:0.15s;
+    }
+    .one:hover img{
+    	transform:translate(-50px,0px);
+    	opacity: 0.5;
+    }
+
+    .two figcaption{
+    	width:100%;
+    	height: 100%;
+    }
+    .two figcaption h2,.two figcaption p{
+    	margin-top: 15%;
+    	margin-left: 15%;
+    }
+    .two figcaption p{
+    	opacity: 0;
+    	transform:translate(0px,50px);
+    }
+    .two figcaption div{
+    	border:2px solid #FFF;
+    	width: 80%;
+    	height:80%;
+    	position:absolute;
+    	top: 10%;
+    	left:10%;
+    	transform:translate(0px,-350px);
+    }
+     .two:hover figcaption div{
+     	transform:translate(0px,0px) rotate(180deg);
+     }
+     .two:hover img{
+     	opacity: 0.5;
+     }
+     .two:hover figcaption p{
+     	margin-left: 15%;
+     	transform:translate(0px,0px);
+     	opacity: 1;
+     }
+     .three figcaption{
+     	top:30%;
+     	left:15%;
+     }  
+     .three:hover img{
+     	opacity: 0.5;
+     }
+      .three figcaption h2{
+      	/*斜切成90度，所以隐藏了*/
+      	transform:skew(90deg);
+      }
+      .three figcaption p{
+      	transform:skew(90deg);
+      }
+      .three:hover figcaption h2,.three:hover figcaption p{
+      	transform:skew(0deg);
+      }
+
+   .four{
+	   	background: #000;
+   }
+   .four figcaption{
+		width:100%;
+		height: 100%;
+    }
+    .four figcaption div{
+    	border:2px solid #FFF;
+    	width: 80%;
+    	height:80%;
+    	position:absolute;
+    	top: 10%;
+    	left:10%;  
+    	transform:scale(1.2,1.2);
+    	opacity: 0;	
+    }
+    .four:hover figcaption div{
+    	transform:scale(1,1);
+    	opacity: 1;	
+    }
+    .four:hover img{
+    	opacity: 0.5;
+    	transform:scale(1.2,1.2);
+    }
+    .four figcaption h2,.four figcaption p{
+    	margin-top: 15%;
+    	margin-left: 15%;
+    	opacity: 0;
+    	transform:scale(1.2,1.2);
+    }
+    .four:hover figcaption h2,.four:hover figcaption p{
+    	opacity: 1;
+    	transform:scale(1,1);
+    }
+	</style>
+</head>
+<body>
+    <!-- 平移动画 多条文字 -->
+	<figure class="one">
+	  <img src="../pic/yantai.jpg">
+	  <figcaption>
+         <h2>标题</h2>
+	     <p>图片描述1</p>
+	     <p>图片描述2</p>
+	     <p>图片描述3</p>
+	  </figcaption>  
+	</figure>
+
+	<!-- 旋转动画 -->
+	<figure class="two">
+	  <img src="../pic/yantai.jpg">
+	  <figcaption>
+        <h2>旋转动画</h2>
+        <p>飞一个来</p>
+        <div></div>
+	  </figcaption>  
+	</figure>
+
+	<figure class="three">
+	  <img src="../pic/yantai.jpg">
+	  <figcaption>
+        <h2>斜切动画</h2>
+        <p>斜切动画注释什么好呢</p>
+	  </figcaption>	  
+	</figure>
+
+	<figure class="four">
+	  <img src="../pic/like.jpg">
+	  <figcaption>
+        <h2>缩放动画</h2>
+        <p>最喜欢这个效果</p>
+        <div></div>
+	  </figcaption>  
+	</figure>	
+</body>
+</html>
