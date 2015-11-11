@@ -1,3 +1,3 @@
 # makeSomeDemos
-模仿一些网站的小效果
-#发现乐趣，保持热情，给自己一个坚持的理由。
+Imitate some websites'pages.
+#Give me a reason to insist on Front-End
