@@ -1,50 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>网页定位导航效果</title>
-	<style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
-	body{
-		font-size:12px;
-		line-height:1.7;
-	}
-	li{
-		list-style: none;
-	}
+  <meta charset="UTF-8">
+  <title>网页定位导航效果</title>
+  <style type="text/css">
+  *{
+    margin:0;
+    padding:0;
+  }
+  body{
+    font-size:12px;
+    line-height:1.7;
+  }
+  li{
+    list-style: none;
+  }
       #content{
-      	width: 700px;
-      	margin:0 auto;
-      	padding:20px;
+        width: 700px;
+        margin:0 auto;
+        padding:20px;
       }
       #content h1{
-      	font-size: 30px;
-      	color:lightblue;
+        font-size: 30px;
+        color:lightblue;
       }
       #content .item{
-      	padding:20px;
-      	margin-bottom: 20px;
-      	border:1px solid gray;
+        padding:20px;
+        margin-bottom: 20px;
+        border:1px solid gray;
       }
       #content .item h2{
-      	font-size: 16px;
-      	font-weight: bold;
-      	border-bottom:2px solid lightblue;
-      	margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom:2px solid lightblue;
+        margin-bottom: 10px;
       }
       #content .item li{
-      	display: inline;
-      	margin-right: 15px;
+        display: inline;
+        margin-right: 15px;
       }
       #menu{
-      	position:fixed;
-      	top:100px;
-      	left:50%;
-      	margin-left: 350px;
-      	width:80px;
+        position:fixed;
+        top:100px;
+        left:50%;
+        margin-left: 350px;
+        width:80px;
       }
       #menu ul li a{
         display: block;
@@ -58,87 +58,111 @@
         text-decoration: none;
         text-align: center;
       }
-      #menu ul li a:hover,#menu ul li a.content{
-      	background: lightblue;
-      	color:#fff;
-
+      #menu ul li a:hover,#menu ul li a.current{
+        background: lightblue;
+        color:#fff;
       }
-	</style>
-	<script scr="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
-	</script>
+  </style>
+  <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function () {
+            // 滚动条发生滚动
+              $(window).scroll(function () {
+                  var items = $("#content").find(".item");
+                  var menu = $("#menu");
+                  var top = $(document).scrollTop();
+                  console.log(top);
+                  //滚动条现在所在位置的item id
+                  var currentId = ""; 
+                  items.each(function () {
+                      var m = $(this);
+                      //m.offset().top代表每一个item的顶部位置
+                      if (top > m.offset().top - 300) {
+                          currentId = "#" + m.attr("id");
+                      } else {
+                          return false;
+                      }
+                  });
+                  // 给相应楼层的a 添加current样式,去掉其他链接的current
+                  var currentLink = menu.find(".current");
+                  if (currentId && currentLink.attr("href") != currentId) {
+                      currentLink.removeClass("current");
+                      menu.find("[href=" + currentId + "]").addClass("current");
+                  }
+              });
+          });
+    </script>
 </head>
 <body>
   <div id="menu">
-  	<ul>
-  		<li><a href="#item1">1F 萨摩</a></li>
-  		<li><a href="#item2">2F 拉布</a></li>
-  		<li><a href="#item3">3F 泰迪</a></li>
-  		<li><a href="#item4">4F 仓鼠</a></li>
-  	</ul>
+    <ul>
+      <li><a href="#item1" class="current">1F 萨摩</a></li>
+      <li><a href="#item2">2F 拉布</a></li>
+      <li><a href="#item3">3F 泰迪</a></li>
+      <li><a href="#item4">4F 仓鼠</a></li>
+    </ul>
   </div>
   <div id="content">
-  	<h1>宠物网</h1>
-  	<div id="item1" class="item">
-  		<h2>1F 萨摩</h2>
-  		<ul>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic1.jpg"></a></li>
-  		</ul>
-  	</div>
+    <h1>宠物网</h1>
+    <div id="item1" class="item">
+      <h2>1F 萨摩</h2>
+      <ul>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic1.jpg"></a></li>
+      </ul>
+    </div>
 
-  	<div id="item2" class="item">
-  		<h2>2F 拉布拉多</h2>
-  		<ul>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic2.jpg"></a></li>
-  		</ul>
-  	</div>
+    <div id="item2" class="item">
+      <h2>2F 拉布拉多</h2>
+      <ul>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic2.jpg"></a></li>
+      </ul>
+    </div>
 
-  	<div id="item3" class="item">
-  		<h2>3F 泰迪</h2>
-  		<ul>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic3.jpg"></a></li>
-  		</ul>
-  	</div>
+    <div id="item3" class="item">
+      <h2>3F 泰迪</h2>
+      <ul>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic3.jpg"></a></li>
+      </ul>
+    </div>
 
-  	<div id="item4" class="item">
-  		<h2>4F 仓鼠</h2>
-  		<ul>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  			<li><a href="#"><img src="../pic/pic4.jpg"></a></li>
-  		</ul>
-  	</div>
-
-  </div>
-	
+    <div id="item4" class="item">
+      <h2>4F 仓鼠</h2>
+      <ul>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+        <li><a href="#"><img src="../pic/pic4.jpg"></a></li>
+      </ul>
+    </div>
+  </div> 
 </body>
 </html>
