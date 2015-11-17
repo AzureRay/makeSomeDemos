@@ -49,7 +49,7 @@
 	  		  <li class="profile-item">
 	  		  	<a href="#" class="oj-profile">
 	  		  	  <div class="img-box">
-	  		  	    <img src="../pic/sun.jpg"/>
+	  		  	    <img src="../pic/like.jpg"/>
 	  		  	  </div>
 	  		  	</a>
 	  		  	<!-- <ul class="sub-nav">
@@ -66,6 +66,13 @@
 
 	  <div class="oj-main">
 	    <div class="subject-progress">
+	      <div class="tooltip">
+	      	<div class="tooltip-arrow"></div>
+	      	<div class="tooltip-inner">2/10</div>
+	      </div>
+	      <div class="progress">
+	        <div style="width:20%" class="progress-bar"></div>
+	      </div>
 	    </div>
 	    <div class="subject-title">[单选题]</div>
 	    <div class="subject-main">
@@ -85,7 +92,7 @@
 	    		</div>
 	    		<!-- 问题选项 -->
 	    		<a href="javascript:void(0);" class="subject-options selected" data-id="40892">
-	    		  <label class="radio cheched">
+	    		  <label class="radio checked">
 	    		    <span class="icons"></span>
 	    		    <input type="radio" data-toggle="radio" value="40892" checked="checked">
 	    		    <pre>1 0</pre>
@@ -120,12 +127,26 @@
 	    		</label>
 	    		</a>
 	    	</div>
-	    	<div class="sunject-action"></div>
+	    	<div class="subject-action">
+	    	  <div class="subject-collect">
+	    	  	<a href="javascript:void(0);" class="collect">收藏本题</a>
+	    	  </div>
+	    	  <div class="subject-next">
+	    	    <form name="submitForm" method="post" action="">
+	    	        <input type="hidden" name="answer" id="answer">	    	   
+	    	    	<input type="submit" name="aheadFinish" id="aheadFinish" class="btn warning-btn" value="提前交卷">
+	    	    	<input type="submit" name="next" id="next" class="btn primary-btn" value="下一题">
+	    	    </form>
+	    	  	
+	    	  </div>
+	    		
+	    	</div>
 	    </div>
-        <div class="answer-sheet-box"></div>  	
+        <div class="answer-sheet-box">
+        	<a href="javascript:void(0)" class="card-unfold">展开答题卡</a>
+        	<!-- <a href="javascript:void(0)" class="card-fold">收起答题卡</a> -->
+        </div>  	
 	  </div>
-
-
 	  <div class="oj-footer">
 
 	  </div>
